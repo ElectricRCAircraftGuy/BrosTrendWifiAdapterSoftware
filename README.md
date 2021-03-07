@@ -11,6 +11,7 @@ Ready for use. The entire disk which came with the Wifi adapter is in this repo.
 <!-- MarkdownTOC -->
 
 1. [BrosTrendWifiAdapterSoftware](#brostrendwifiadaptersoftware)
+    1. [Install drivers in Linux Ubuntu](#install-drivers-in-linux-ubuntu)
     1. [How I copied the entire disk to my Linux Ubuntu laptop](#how-i-copied-the-entire-disk-to-my-linux-ubuntu-laptop)
 
 <!-- /MarkdownTOC -->
@@ -29,6 +30,18 @@ Here is the adapter I purchased for $36 from Amazon in Mar. 2021: [BrosTrend AC1
     </a>
 </p>
 
+Stickers that came on the packaging:
+
+> With Linux Support Ticket,  
+> Please include your Amazon  
+> order number, send E-mail to:  
+> support@trend-tech.net.cn.
+
+> Model No.: AC3L  
+> For Linux
+
+Main product page for Model No. AC3L: https://www.trendtechcn.com/Product.aspx?ProductId=329.
+
 Disk that came with it:
 
 <p align="left" width="100%">
@@ -36,6 +49,20 @@ Disk that came with it:
         <img width="30%" src="images/disk_photo.jpg"> 
     </a>
 </p>
+
+Linux manual that came on the disk: [BrosTrend_WiFi_Adapter_Linux_Manual_20200303.pdf](Driver_and_Manual_disk/01_Linux/BrosTrend_WiFi_Adapter_Linux_Manual_20200303.pdf) <== refer to this for instructions and information for Linux!
+
+
+<a id="install-drivers-in-linux-ubuntu"></a>
+## Install drivers in Linux Ubuntu
+
+The install script is found online here: https://deb.trendtechcn.com/install. You can download and run it on Linux like this:
+
+```bash
+wget deb.trendtechcn.com/install -O install
+./install
+```
+
 
 <a id="how-i-copied-the-entire-disk-to-my-linux-ubuntu-laptop"></a>
 ## How I copied the entire disk to my Linux Ubuntu laptop
