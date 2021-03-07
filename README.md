@@ -12,6 +12,7 @@ Ready for use. The entire disk which came with the Wifi adapter is in this repo.
 
 1. [BrosTrendWifiAdapterSoftware](#brostrendwifiadaptersoftware)
     1. [Install drivers in Linux Ubuntu](#install-drivers-in-linux-ubuntu)
+    1. [Disable your internal WiFi card \(source: see my answer here\)](#disable-your-internal-wifi-card-source-see-my-answer-here)
     1. [How I copied the entire disk to my Linux Ubuntu laptop](#how-i-copied-the-entire-disk-to-my-linux-ubuntu-laptop)
 
 <!-- /MarkdownTOC -->
@@ -60,8 +61,42 @@ The install script is found online here: https://deb.trendtechcn.com/install. Yo
 
 ```bash
 wget deb.trendtechcn.com/install -O install
+chmod +x install
 ./install
 ```
+
+The install script appears to be very well-written and well-tested, which is extremely unusual for WiFi adapters on Linux. They obviously want this to work and be easy, and are clearly trying to get our business. During the install process, it asks you to select your WiFi adapter model or plug it in so it can read the `dmesg` output and auto-detect it. _If you have the adapter, the version number is printed very clearly on the bottom of it._ Even easier though, just do like the script says and plug it in and press Enter. For my case, I have the Model No. `AC3` Version No. `V2`, so it automatically downloaded, compiled, and installed this driver for me: https://deb.trendtechcn.com/rtl88x2bu-dkms.deb.
+
+At the end of the installation, which took just a few minutes, it said:
+
+```
+=====================================================
+ The driver was successfully installed!
+ We'd appreciate an Amazon product review:
+ https://www.amazon.com/review/create-review/listing
+=====================================================
+```
+
+So, I'm going to do like they asked and leave a review here: https://www.amazon.com/review/create-review/listing. 
+
+**I am VERY impressed with the easy installation process! _If the WiFi adapter works as well as the installation process does, and is reliable, this will be hands-down the best modern WiFi adapter on the market today (as of Mar. 2021) for Linux!_**
+
+<a id="disable-your-internal-wifi-card-source-see-my-answer-here"></a>
+## Disable your internal WiFi card (source: [see my answer here](https://askubuntu.com/questions/168032/how-to-disable-built-in-wifi-and-use-only-usb-wifi-card/1320155#1320155))
+
+Now, to turn off your internal wifi adapter and use this one, do the following. Note that you'll have to run the `sudo ip link set wlan0 down` command to disable the internal WiFi each and every time you reboot and want to use solely this external adapter, so you might consider adding that command to a startup script if you want to always use this external adapter after each boot. 
+
+1. Unplug the external adapter, and run `iwconfig` to see what your internal adapter is named. Mine shows `wlan0`. 
+1. Turn off that internal adapter:
+    ```bash
+    sudo ip link set wlan0 down
+    ```
+1. Now plug in your BrosTrend external adapter. Optionally run `iwconfig` again to see what it is called, just for informational/awareness purposes. Mine showed `wlx4401bb9e35a8` one time, for some reason, but now just shows `wlan1`.
+1. Click the top-right corner of your screen in Ubuntu to open the drop-down menu to connect to WiFi. Connect with the external adapter. It's hard to tell which adapter is which, as it will show both adapters, but the external one should show networks available since it is NOT disabled, while the internal one should show nothing. You may have to play around with it, possibly unplugging the external one and plugging it back in again. Just run `iwconfig` and/or unplug the external adapter and run it again to see what's going on with the two adapters if needed, and disable/re-enable the internal one as required. You may have to wait a minute or so for the network list for the new adapter to be populated as you try to connect it to a network, or, if you have issues reconnecting after messing with which adapter you are trying to use to connect, just reboot your computer.
+1. If you ever need to turn the internal WiFi adapter back on, you can do it with:
+    ```bash
+    sudo ip link set wlan0 up
+    ```
 
 
 <a id="how-i-copied-the-entire-disk-to-my-linux-ubuntu-laptop"></a>
