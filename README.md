@@ -21,11 +21,11 @@ Ready for use. The entire disk which came with the Wifi adapter is in this repo.
 # BrosTrendWifiAdapterSoftware
 Software that comes on the mini CD (which is inconvenient) with BrosTrend WiFi adapters, and my personal installation notes for Linux.
 
-Here is the adapter I purchased for $36 from Amazon in Mar. 2021: BrosTrend AC1200 2.4GHz/5GHz WiFi adapter, Model No. AC3L:
+Here is the adapter I purchased for $36 from Amazon in Mar. 2021: [BrosTrend AC1200 2.4GHz/5GHz WiFi adapter, Model No. AC3L](https://www.amazon.com/gp/product/B07FCN6WGX?ie=UTF8&psc=1&linkCode=ll1&tag=wwwel-20&linkId=b7839451620775257a522bc50b9a33b5&language=en_US&ref_=as_li_ss_tl):
 
 <p align="left" width="100%">
     <a href="https://www.amazon.com/gp/product/B07FCN6WGX?ie=UTF8&psc=1&linkCode=ll1&tag=wwwel-20&linkId=b7839451620775257a522bc50b9a33b5&language=en_US&ref_=as_li_ss_tl">
-        <img width="15%" src="images/BrosTrend_AC1200_AC3L.jpg"> 
+        <img width="25%" src="images/BrosTrend_AC1200_AC3L.jpg"> 
     </a>
 </p>
 
