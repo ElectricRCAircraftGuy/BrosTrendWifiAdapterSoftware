@@ -12,8 +12,9 @@ Ready for use. The entire disk which came with the Wifi adapter is in this repo.
 
 1. [BrosTrendWifiAdapterSoftware](#brostrendwifiadaptersoftware)
     1. [Install drivers in Linux Ubuntu](#install-drivers-in-linux-ubuntu)
-    1. [Disable your internal WiFi card \(source: see my answer here\)](#disable-your-internal-wifi-card-source-see-my-answer-here)
+    1. [Disable your internal WiFi card](#disable-your-internal-wifi-card)
     1. [How I copied the entire disk to my Linux Ubuntu laptop](#how-i-copied-the-entire-disk-to-my-linux-ubuntu-laptop)
+    1. [Emailed feedback that BrosTrend/TrendTech send me directly after they read this very readme](#emailed-feedback-that-brostrendtrendtech-send-me-directly-after-they-read-this-very-readme)
 
 <!-- /MarkdownTOC -->
 </details>
@@ -65,6 +66,12 @@ chmod +x install
 ./install
 ```
 
+The above commands is how I did it. Or, you can use their command exactly, as they specify in their Linux PDF just above, like this:
+
+```bash
+sh -c 'busybox wget deb.trendtechcn.com/install -O /tmp/install && sh /tmp/install'
+```
+
 The install script appears to be very well-written and well-tested, which is extremely unusual for WiFi adapters on Linux. They obviously want this to work and be easy, and are clearly trying to get our business. During the install process, it asks you to select your WiFi adapter model or plug it in so it can read the `dmesg` output and auto-detect it. _If you have the adapter, the version number is printed very clearly on the bottom of it._ Even easier though, just do like the script says and plug it in and press Enter. For my case, I have the Model No. `AC3` Version No. `V2`, so it automatically downloaded, compiled, and installed this driver for me: https://deb.trendtechcn.com/rtl88x2bu-dkms.deb.
 
 At the end of the installation, which took just a few minutes, it said:
@@ -81,8 +88,16 @@ So, I'm going to do like they asked and leave a review here: https://www.amazon.
 
 **I am VERY impressed with the easy installation process! _If the WiFi adapter works as well as the installation process does, and is reliable, this will be hands-down the best modern WiFi adapter on the market today (as of Mar. 2021) for Linux!_**
 
-<a id="disable-your-internal-wifi-card-source-see-my-answer-here"></a>
-## Disable your internal WiFi card (source: [see my answer here](https://askubuntu.com/questions/168032/how-to-disable-built-in-wifi-and-use-only-usb-wifi-card/1320155#1320155))
+<a id="disable-your-internal-wifi-card"></a>
+## Disable your internal WiFi card
+
+Source: 
+
+1. [See my answer #1 on AskUbuntu here](https://askubuntu.com/questions/168032/how-to-disable-built-in-wifi-and-use-only-usb-wifi-card/1320155#1320155).
+1. [or my answer #2 on AskUbuntu here](https://askubuntu.com/questions/168032/how-to-disable-built-in-wifi-and-use-only-usb-wifi-card/1321922#1321922).
+    1. My answer #2 comes from BrosTrend TrendTech directly, here: https://deb.trendtechcn.com/advanced/internal-adapters/.
+
+My own notes:
 
 Now, to turn off your internal wifi adapter and use this one, do the following. Note that you'll have to run the `sudo ip link set wlan0 down` command to disable the internal WiFi each and every time you reboot and want to use solely this external adapter, so you might consider adding that command to a startup script if you want to always use this external adapter after each boot. 
 
@@ -92,7 +107,7 @@ Now, to turn off your internal wifi adapter and use this one, do the following. 
     sudo ip link set wlan0 down
     ```
 1. Now plug in your BrosTrend external adapter. Optionally run `iwconfig` again to see what it is called, just for informational/awareness purposes. Mine showed `wlx4401bb9e35a8` one time, for some reason, but now just shows `wlan1`.
-1. Click the top-right corner of your screen in Ubuntu to open the drop-down menu to connect to WiFi. Connect with the external adapter. It's hard to tell which adapter is which, as it will show both adapters, but the external one should show networks available since it is NOT disabled, while the internal one should show nothing. You may have to play around with it, possibly unplugging the external one and plugging it back in again. Just run `iwconfig` and/or unplug the external adapter and run it again to see what's going on with the two adapters if needed, and disable/re-enable the internal one as required. You may have to wait a minute or so for the network list for the new adapter to be populated as you try to connect it to a network, **or, if you have issues reconnecting after messing with which adapter you are trying to use to connect, just reboot your computer.** I'm not entirely sure, but **it _may_ be that if your `iwconfig` shows the external adapter as `wlan1` or similar instead of `wlx4401bb9e35a8`, then you need to reboot to fix the error** (and re-disable the internal WiFi adapter again too, if necessary, after the reboot).
+1. Click the top-right corner of your screen in Ubuntu to open the drop-down menu to connect to WiFi. Connect with the external adapter. It's hard to tell which adapter is which, as it will show both adapters, but the external one should show networks available since it is NOT disabled, while the internal one should show nothing. You may have to play around with it, possibly unplugging the external one and plugging it back in again. Just run `iwconfig` and/or unplug the external adapter and run it again to see what's going on with the two adapters if needed, and disable/re-enable the internal one as required. You may have to wait a minute or so for the network list for the new adapter to be populated as you try to connect it to a network, **or, if you have issues reconnecting after messing with which adapter you are trying to use to connect, just reboot your computer.** I'm not entirely sure, but **it _may_ be that if your `iwconfig` shows the external adapter as `wlan1` or similar instead of `wlx4401bb9e35a8`, then you need to reboot to fix the error** (and re-disable the internal WiFi adapter again too, if necessary, after the reboot). **Update: it is also worth messing around inside the "Advanced Network Configuration" GUI via `nm-connection-editor` to see if you can get a non-functioning adapter working there. See also the notes from BrosTrend/TrendTech about this tool, which they emailed me, below.**
 1. If you ever need to turn the internal WiFi adapter back on, you can do it with:
     ```bash
     sudo ip link set wlan0 up
@@ -129,6 +144,70 @@ _Note: if you never want to use your internal WiFi card, you can try disabling i
     cd ~/GS/dev/BrosTrendWifiAdapterSoftware
     chmod -R ug+rw 'Driver&Manual'
     ```
+
+
+<a id="emailed-feedback-that-brostrendtrendtech-send-me-directly-after-they-read-this-very-readme"></a>
+## Emailed feedback that BrosTrend/TrendTech send me directly after they read this very readme
+
+My email to them 7 Mar. 2021 1:10am:
+
+> Thanks. It seems to work. Can you please verify my bold comments under step 4 here, and tell me if they are right? https://github.com/ElectricRCAircraftGuy/BrosTrendWifiAdapterSoftware#disable-your-internal-wifi-card-source-see-my-answer-here.
+> 
+> In particular:
+> 
+> > it may be that if your `iwconfig` shows the external adapter as `wlan1` or similar instead of `wlx4401bb9e35a8`, then you need to reboot to fix the error
+> 
+> Thanks!
+
+
+**Their response to me on 7 Mar. 2021** (I've done some very minor formatting and other small corrections to make this easier to read). **They have some great points here, especially in bullets 2 and 3!**
+
+> Hi Gabriel,
+> 
+> Thank you for the detailed instructions and your good words about our
+> installation process there.  
+> Here are some remarks while reading them:
+> 
+> 1. No need for chmod.
+> 
+>     > ```bash
+>     > chmod +x install
+>     > ./install
+>     > ```
+> 
+>     Instead of these, you can do this, like our instructions say:
+>     ```bash
+>     sh install
+>     ```
+> 
+>     I.e. there's no need to use `chmod` in order to run a script via `sh`.
+> 
+> 2. Documentation about disabling internal adapters. We have that here; it relies on module blacklisting: https://deb.trendtechcn.com/advanced/internal-adapters/.
+> 
+> 3. The network manager `nm-connection-editor` dialog \[GUI] (run that from a
+> terminal to see which one I mean) has a "Device" combo box, where you
+> can set a MAC address in order to limit one wifi connection to a
+> specific adapter, or you can leave it empty if you want it to work with
+> any adapter.  
+> So normally there's no need to disable the internal adapter at all.
+> 
+> 4. The `wlan0` vs `wlx4401bb9e35a8` name difference is caused by a kernel
+> option called `net.ifnames=0`. You can read more about it here:
+> https://wiki.debian.org/NetworkInterfaceNames.
+> 
+> 5. Note that if someone has a laptop and presses e.g. **Fn** + **F5** to disable
+> wifi, this may disable the [external] USB adapters too, confusing users.
+> 
+> 6. Another way to copy a CDROM is:
+>     ```bash
+>     sudo dd if=/dev/sr0 of=trendtechcn-cd.iso bs=128k status=progress
+>     ```
+> 
+> Greetings from a fellow Linux enthusiast! :)
+> 
+> Best regards,
+> **** from BrosTrend technical support team
+> Please click "Reply to All" when replying to this email
 
 
 ----
