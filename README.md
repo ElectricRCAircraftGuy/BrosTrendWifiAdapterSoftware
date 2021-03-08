@@ -96,7 +96,7 @@ So, I'm going to do like they asked and leave a review here: https://www.amazon.
 Source: 
 
 1. [See my answer #1 on AskUbuntu here](https://askubuntu.com/questions/168032/how-to-disable-built-in-wifi-and-use-only-usb-wifi-card/1320155#1320155).
-1. [or my answer #2 on AskUbuntu here](https://askubuntu.com/questions/168032/how-to-disable-built-in-wifi-and-use-only-usb-wifi-card/1321922#1321922).
+1. [or my answer #2 on AskUbuntu here][my-ans-num2].
     1. My answer #2 comes from BrosTrend TrendTech directly, here: https://deb.trendtechcn.com/advanced/internal-adapters/.
 
 My own notes:
@@ -115,7 +115,7 @@ Now, to turn off your internal wifi adapter and use this one, do the following. 
     sudo ip link set wlan0 up
     ```
 
-_Note: if you never want to use your internal WiFi card, you can try disabling it entirely in your BIOS/UEFI settings, which you access manually at boot-time, if your system allows it._ You might also try [this answer here](https://askubuntu.com/questions/168032/how-to-disable-built-in-wifi-and-use-only-usb-wifi-card/168046#168046).
+_Note: if you never want to use your internal WiFi card, you can try disabling it entirely in your BIOS/UEFI settings, which you access manually at boot-time, if your system allows it._ You might also try [this answer here](https://askubuntu.com/questions/168032/how-to-disable-built-in-wifi-and-use-only-usb-wifi-card/168046#168046), or, even better, the BrosTech-recommended solution I've documented [in my answer here][my-ans-num2].
 
 
 <a id="how-i-copied-the-entire-disk-to-my-linux-ubuntu-laptop"></a>
@@ -217,3 +217,5 @@ My email to them 7 Mar. 2021 1:10am:
 Disclaimer required by Amazon:  
 _We are a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for us to earn fees by linking to Amazon.com and affiliated sites._  
 I make virtually nothing from Amazon in this way, but I must include this disclaimer anyway. 
+
+  [my-ans-num2]: https://askubuntu.com/questions/168032/how-to-disable-built-in-wifi-and-use-only-usb-wifi-card/1321922#1321922
