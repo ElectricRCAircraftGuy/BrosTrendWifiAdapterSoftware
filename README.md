@@ -162,7 +162,7 @@ My email to them 7 Mar. 2021 1:10am:
 > Thanks!
 
 
-**Their response to me on 7 Mar. 2021** (I've done some very minor formatting and other small corrections to make this easier to read). **They have some great points here, especially in bullets 2 and 3!**
+**Their response to me on 7 Mar. 2021 7:42am** (I've done some very minor formatting and other small corrections to make this easier to read). **They have some great points here, especially in bullets 2 and 3!**
 
 > Hi Gabriel,
 > 
