@@ -8,7 +8,7 @@ Ready for use. The entire disk which came with the Wifi adapter is in this repo.
 
 TLDR;
 
-One command to install the driver in Linux:
+Run this one single command to install the driver in Linux. Follow the instructions in its prompts:
 ```bash
 sh -c 'busybox wget deb.trendtechcn.com/install -O /tmp/install && sh /tmp/install'
 ```
