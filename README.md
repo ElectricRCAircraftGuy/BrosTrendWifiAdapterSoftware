@@ -6,6 +6,13 @@ Ready for use. The entire disk which came with the Wifi adapter is in this repo.
 
 **I am VERY impressed with the easy installation process and their timely and competent email customer support for Linux! _If the WiFi adapter works as well as the installation process does, and is reliable, this will be hands-down the best modern WiFi adapter on the market today (as of Mar. 2021) for Linux!_**
 
+TLDR;
+
+One command to install the driver in Linux:
+```bash
+sh -c 'busybox wget deb.trendtechcn.com/install -O /tmp/install && sh /tmp/install'
+```
+
 
 # Table of Contents
 <details>
