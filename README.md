@@ -2,9 +2,9 @@
 
 # Repo Status
 
-Ready for use. The entire disk which came with the Wifi adapter is in this repo.
+Ready for use. Run the 1 or 3-line installation command below. Also, the entire disk which came with the Wifi adapter is in this repo.
 
-**I am VERY impressed with the easy installation process and their timely and competent email customer support for Linux! _If the WiFi adapter works as well as the installation process does, and is reliable, this will be hands-down the best modern WiFi adapter on the market today (as of Mar. 2021) for Linux!_**
+**I am VERY impressed with the easy installation process and their timely and competent email customer support for Linux! _This is hands-down my "go-to" high-speed Wifi adapter for Linux! This is hands-down the best modern WiFi adapter on the market today (as of Mar. 2021) for Linux!_**
 
 TLDR;
 
@@ -19,14 +19,27 @@ sh -c 'busybox wget deb.trendtechcn.com/install -O /tmp/install && sh /tmp/insta
 <summary><b>(click to expand or hide)</b></summary>
 <!-- MarkdownTOC -->
 
+1. [All of my Wifi adapter repos:](#all-of-my-wifi-adapter-repos)
 1. [BrosTrendWifiAdapterSoftware](#brostrendwifiadaptersoftware)
     1. [Install drivers in Linux Ubuntu](#install-drivers-in-linux-ubuntu)
-    1. [Disable your internal WiFi card](#disable-your-internal-wifi-card)
+    1. [How to Disable your internal WiFi card](#how-to-disable-your-internal-wifi-card)
     1. [How I copied the entire disk to my Linux Ubuntu laptop](#how-i-copied-the-entire-disk-to-my-linux-ubuntu-laptop)
     1. [Emailed feedback that BrosTrend/TrendTech send me directly after they read this very readme](#emailed-feedback-that-brostrendtrendtech-send-me-directly-after-they-read-this-very-readme)
 
 <!-- /MarkdownTOC -->
 </details>
+
+
+<a id="all-of-my-wifi-adapter-repos"></a>
+# All of my Wifi adapter repos:
+
+- **If you are using Linux and desire a high-speed WiFi adapter, I recommend [this BrosTrend Wifi adapter](https://amzn.to/33qXt9i) above all others! It installs with a simple 1-line or 3-line command and has an excellent installation script, as well as great performance, speed, and range.** 
+- If you are using Linux and need a Wifi adapter which is _plug-and-play_ and requires NO driver installation, _and_ are okay with it being a bit slower than the BrosTrend one above, then buy a [Panda Wifi adapter like this one](https://amzn.to/2Q0JnZd) instead.
+
+My Wifi Repositories:
+1. [BrosTrendWifiAdapterSoftware](https://github.com/ElectricRCAircraftGuy/BrosTrendWifiAdapterSoftware) [this repo] - (BEST WIFI ADAPTER FOR LINUX, HANDS-DOWN!)
+1. [AlfaWiFiAdapterSoftware](https://github.com/ElectricRCAircraftGuy/AlfaWiFiAdapterSoftware)
+1. [RealtekWiFiAdapterSoftware](https://github.com/ElectricRCAircraftGuy/RealtekWiFiAdapterSoftware)
 
 
 <a id="brostrendwifiadaptersoftware"></a>
@@ -95,10 +108,10 @@ At the end of the installation, which took just a few minutes, it said:
 
 So, I'm going to do like they asked and leave a review here: https://www.amazon.com/review/create-review/listing. 
 
-**I am VERY impressed with the easy installation process! _If the WiFi adapter works as well as the installation process does, and is reliable, this will be hands-down the best modern WiFi adapter on the market today (as of Mar. 2021) for Linux!_**
+**I am VERY impressed with the easy installation process and BrosTrend's top-notch _Linux driver_ support for this device!**
 
-<a id="disable-your-internal-wifi-card"></a>
-## Disable your internal WiFi card
+<a id="how-to-disable-your-internal-wifi-card"></a>
+## How to Disable your internal WiFi card
 
 Source: 
 
@@ -108,7 +121,7 @@ Source:
 
 My own notes:
 
-Now, to turn off your internal wifi adapter and use this one, do the following. Note that you'll have to run the `sudo ip link set wlan0 down` command to disable the internal WiFi each and every time you reboot and want to use solely this external adapter, so you might consider adding that command to a startup script if you want to always use this external adapter after each boot. 
+Now, to turn off your internal wifi adapter and use this one, do the following. _Note that you'll have to run the `sudo ip link set wlan0 down` command to disable the internal WiFi each and every time you reboot and want to use solely this external adapter, so you might consider adding that command to a startup script if you want to always use this external adapter after each boot._ 
 
 1. Unplug the external adapter, and run `iwconfig` to see what your internal adapter is named. Mine shows `wlan0`. 
 1. Turn off that internal adapter:
